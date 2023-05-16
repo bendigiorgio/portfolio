@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@heroicons/react": "^2.0.17",
+    "@mantine/carousel": "^6.0.11",
     "@mantine/core": "^6.0.11",
     "@mantine/hooks": "^6.0.11",
     "@react-three/drei": "^9.65.5",
@@ -20,6 +21,7 @@
     "@types/react-dom": "18.0.11",
     "@types/three": "^0.150.2",
     "autoprefixer": "10.4.14",
+    "embla-carousel-react": "^8.0.0-rc03",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "framer-motion": "^10.12.4",

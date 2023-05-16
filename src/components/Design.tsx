@@ -1,7 +1,7 @@
 "use client";
 import { useNavbarStore } from "@/stores/navbarStore";
 import { motion } from "framer-motion";
-
+import { Carousel } from "@mantine/carousel";
 const Design = () => {
   const toggleNav = useNavbarStore((state) => state.toggleNavbar);
   return (
@@ -18,6 +18,10 @@ const Design = () => {
           aren&apos;t just satisfying to view but also accentuate the
           brand&apos;s identity.
         </p>
+      </div>
+
+      <div>
+        <Carousel></Carousel>
       </div>
     </motion.section>
   );
