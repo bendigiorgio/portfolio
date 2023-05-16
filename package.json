@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
     "@heroicons/react": "^2.0.17",
+    "@mantine/core": "^6.0.11",
+    "@mantine/hooks": "^6.0.11",
     "@react-three/drei": "^9.65.5",
     "@react-three/fiber": "^8.12.2",
     "@types/node": "18.16.0",
