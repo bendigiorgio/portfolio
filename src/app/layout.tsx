@@ -1,8 +1,15 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: ["100", "300", "400", "500", "700", "900"],
+  subsets: ["latin"],
+});
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata = {
   title: "Ben Di Giorgio",
@@ -15,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} `}>
       <body
-        className={`${inter.className}  bg-secondary px-1 py-3 text-soft-peach-50 2xs:px-4`}
+        className={`${roboto.className} bg-secondary px-1 py-3 text-soft-peach-50 2xs:px-4`}
       >
         <Navbar />
         {children}

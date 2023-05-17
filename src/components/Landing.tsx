@@ -1,21 +1,17 @@
 "use client";
-import { Roboto } from "next/font/google";
 import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import { useNavbarStore } from "@/stores/navbarStore";
-
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  subsets: ["latin"],
-});
 
 const Landing = () => {
   const toggleLogo = useNavbarStore((state) => state.toggleLogo);
   return (
     <section className="relative flex min-h-screen flex-col-reverse">
       <div>
-        <h1 className="mb-14 text-5xl font-semibold 2xs:text-6xl sm:text-7xl lg:text-9xl">
+        <h1
+          className={`mb-14 font-inter text-5xl font-semibold 2xs:text-6xl sm:text-7xl lg:text-9xl`}
+        >
           BEN <br className="flex md:hidden" /> DI GIORGIO
         </h1>
       </div>
@@ -28,7 +24,7 @@ const Landing = () => {
           <a href="/" className="w-fit hover:cursor-pointer">
             <Logo className="h-10 w-10" />
           </a>
-          <p className={`${roboto.className} max-w-lg text-lg`}>
+          <p className={` max-w-lg text-lg`}>
             An Australian web developer / designer / artist based in Japan.
             Working on new and ambitious projects. I push the boundaries and
             create truly interactive and immersive experiences.
