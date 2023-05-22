@@ -2,8 +2,73 @@
 import { useNavbarStore } from "@/stores/navbarStore";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Carousel } from "@mantine/carousel";
-import Card from "./Card";
-import { useRef } from "react";
+
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+
+const projects = [
+  {
+    title: "Blackbox Tattoo",
+    image: "/mockups/blackboxMockup.png",
+    description: "t",
+    stack: {
+      frontend: ["React", "Tailwindcss"],
+      backend: ["Nextjs", "Zustand", "Prisma", "Nextauth", "Sanity", "Stripe"],
+    },
+  },
+  {
+    title: "Maison Di Giorgio",
+    image: "/mockups/maisonMockup.png",
+    description: "t",
+    stack: {
+      frontend: ["React", "Tailwindcss", "Framer Motion"],
+      backend: ["Nextjs", "Zustand"],
+    },
+  },
+  {
+    title: "Shukkin",
+    image: "/mockups/shukkinMockup.png",
+    description: "A roster management web application for small businesses.",
+    stack: {
+      frontend: ["React", "Tailwindcss", "Mantine"],
+      backend: [
+        "Nextjs",
+        "Zustand",
+        "Prisma",
+        "Nextauth",
+        "Postgresql",
+        "Stripe",
+      ],
+    },
+  },
+  {
+    title: "Darkly Labs",
+    image: "/logoPng.png",
+    description: "t",
+    stack: {
+      frontend: ["React", "Tailwindcss", "Mantine"],
+      backend: [
+        "Nextjs",
+        "Zustand",
+        "Prisma",
+        "Nextauth",
+        "Postgresql",
+        "Graphql",
+        "Wordpress",
+      ],
+    },
+  },
+  {
+    title: "Spotify Clone",
+    image: "/logoPng.png",
+    description: "t",
+    stack: {
+      frontend: ["React", "Tailwindcss"],
+      backend: ["Nextjs", "Recoil", "Prisma", "Nextauth", "Spotify API"],
+    },
+  },
+];
+
 const Design = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const toggleNav = useNavbarStore((state) => state.toggleNavbar);
@@ -13,8 +78,27 @@ const Design = () => {
   });
   const opacityDev = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
   const yPosDes = useTransform(scrollYProgress, [0, 0.525, 0.75], [0, 0, -255]);
-
   const yPosDev = useTransform(scrollYProgress, [0, 0.7, 1], [0, 0, -255]);
+  const cardRotation = useTransform(
+    scrollYProgress,
+    [0, 0.5, 0.7],
+    [0, 0, 180]
+  );
+  const cardScaleX = useTransform(scrollYProgress, [0, 0.59, 0.61], [1, 1, -1]);
+  const [cardFlipped, setCardFlipped] = useState(false);
+  useEffect(() => {
+    function updateCard() {
+      if (scrollYProgress.get() > 0.6) {
+        setCardFlipped(true);
+      } else {
+        setCardFlipped(false);
+      }
+    }
+    const unsubscribe = scrollYProgress.on("change", updateCard);
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   return (
     <motion.section
@@ -45,89 +129,56 @@ const Design = () => {
             slideGap={"md"}
             slideSize={"25%"}
           >
-            <Carousel.Slide>
-              <Card
-                description="t"
-                image="/logoPng.png"
-                title="Blackbox Tattoo"
-                stack={{
-                  frontend: ["React", "Tailwindcss"],
-                  backend: [
-                    "Nextjs",
-                    "Zustand",
-                    "Prisma",
-                    "Nextauth",
-                    "Sanity",
-                    "Stripe",
-                  ],
-                }}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <Card
-                description="t"
-                image="/logoPng.png"
-                title="Maison Di Giorgio"
-                stack={{
-                  frontend: ["React", "Tailwindcss", "Framer Motion"],
-                  backend: ["Nextjs", "Zustand"],
-                }}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <Card
-                description="A roster management web application for small businesses."
-                image="/logoPng.png"
-                title="Shukkin"
-                stack={{
-                  frontend: ["React", "Tailwindcss", "Mantine"],
-                  backend: [
-                    "Nextjs",
-                    "Zustand",
-                    "Prisma",
-                    "Nextauth",
-                    "Postgresql",
-                    "Stripe",
-                  ],
-                }}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <Card
-                description="t"
-                image="/logoPng.png"
-                title="Darkly Labs"
-                stack={{
-                  frontend: ["React", "Tailwindcss", "Mantine"],
-                  backend: [
-                    "Nextjs",
-                    "Zustand",
-                    "Prisma",
-                    "Nextauth",
-                    "Postgresql",
-                    "Graphql",
-                    "Wordpress",
-                  ],
-                }}
-              />
-            </Carousel.Slide>
-            <Carousel.Slide>
-              <Card
-                description="t"
-                image="/logoPng.png"
-                title="Spotify Clone"
-                stack={{
-                  frontend: ["React", "Tailwindcss"],
-                  backend: [
-                    "Nextjs",
-                    "Recoil",
-                    "Prisma",
-                    "Nextauth",
-                    "Spotify API",
-                  ],
-                }}
-              />
-            </Carousel.Slide>
+            {projects.map((project) => (
+              //flips to reveal stack
+              <Carousel.Slide>
+                <motion.div
+                  style={{ rotateY: cardRotation, scaleX: cardScaleX }}
+                  className="relative flex h-[498px] w-[450px] flex-col "
+                >
+                  <div className="relative h-full w-full bg-white">
+                    {cardFlipped ? (
+                      <div className="h-full overflow-hidden">
+                        <h3 className="pl-3 pt-3 text-5xl font-medium uppercase text-black">
+                          Stack
+                        </h3>
+                        <div className="mt-4 flex h-full w-full flex-row ">
+                          <div className="flex h-full basis-1/2 flex-col space-y-1 border-r text-center">
+                            <h4 className="text-xl font-medium text-black/70">
+                              Backend
+                            </h4>
+                            {project.stack.backend.map((tool) => (
+                              <div key={tool} className="text-black/60">
+                                {tool}
+                              </div>
+                            ))}
+                          </div>
+                          <div className="flex h-full basis-1/2 flex-col space-y-1 text-center ">
+                            <h4 className="text-xl font-medium text-black/70">
+                              Frontend
+                            </h4>
+                            {project.stack.frontend.map((tool) => (
+                              <div className="text-black/60">{tool}</div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <Image
+                        className="object-contain"
+                        width={450}
+                        height={450}
+                        src={project.image}
+                        alt={project.title}
+                      />
+                    )}
+                  </div>
+                  <h3 className="text-5xl font-medium uppercase">
+                    {project.title}
+                  </h3>
+                </motion.div>
+              </Carousel.Slide>
+            ))}
           </Carousel>
         </div>
       </motion.div>
