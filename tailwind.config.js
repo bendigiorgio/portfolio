@@ -33,6 +33,8 @@ module.exports = {
         },
         secondary: "#0F0F0F",
         tertiary: "#363636",
+        "harvest-gold": "#ECA400",
+        byzantium: "#832161",
       },
       screens: {
         xs: "480px",
