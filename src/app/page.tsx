@@ -1,6 +1,7 @@
 import Artwork from "@/components/Artwork";
 
 import DesignNew from "@/components/DesignNew";
+import Expertise from "@/components/Expertise";
 import Landing from "@/components/Landing";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
     <main className="text-primary flex max-w-full flex-col bg-secondary">
       <Landing />
       <DesignNew />
-      <Artwork />
+      <Expertise />
     </main>
   );
 }

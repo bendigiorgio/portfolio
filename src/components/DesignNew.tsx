@@ -1,12 +1,14 @@
 "use client";
-
 import { useNavbarStore } from "@/stores/navbarStore";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
 import {
+  SiDocker,
+  SiFastapi,
   SiNextdotjs,
   SiPrisma,
+  SiPython,
   SiStripe,
   SiSupabase,
   SiTailwindcss,
@@ -16,6 +18,7 @@ import {
 import BlackBoxMockup from "../../public/mockups/blackboxMockup.png";
 import ShukkinMockup from "../../public/mockups/shukkinMockup.png";
 import MaisonMockup from "../../public/mockups/maisonMockup.png";
+import EnhanceMockup from "../../public/mockups/enhanceMockup.png";
 import SanityLogo from "./SanityLogo";
 import MotionProjectCard from "./ProjectCard";
 
@@ -23,17 +26,9 @@ const DesignNew = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const toggleNav = useNavbarStore((state) => state.toggleNavbar);
 
-  const sectionVariants = {
-    hidden: {
-      opacity: 1,
-    },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.5 },
-    },
-  };
-
   const cardVariants = {
+    //esling-disable-next-line
+    //@ts-ignore  //! Use only numbers
     hidden: (i) => ({
       opacity: 0,
       x: i,
@@ -65,19 +60,26 @@ const DesignNew = () => {
             <span className="flex md:hidden">Development</span>
           </h1>
         </div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={sectionVariants}
-          viewport={{ once: true }}
-          className="flex flex-col space-y-6 md:w-9/12 xl:min-w-fit"
-        >
+        <div className="flex flex-col space-y-6 md:w-9/12 xl:min-w-fit">
           {/* BlackBox */}
           <MotionProjectCard
-            custom={-500}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={-200}
             variants={cardVariants}
             title="Blackbox Tattoo"
-            description="An independant tattoo artist based in Fukuoka, Japan."
+            description={
+              <>
+                An independant tattoo artist based in Fukuoka, Japan. He has a
+                very unique style and I used this style as inspiration for the
+                overall feel of the website. <br /> He also had the need for an
+                online store to sell other goods that he makes, including
+                clothing and artwork. The store was built using Sanity.io to
+                create a fully custom CMS within the website and Stripe for
+                payments.
+              </>
+            }
             image={BlackBoxMockup}
             stack={[
               <SiTypescript className="h-7 w-7" key={"icon1"} />,
@@ -91,10 +93,24 @@ const DesignNew = () => {
           />
           {/* Shukkin */}
           <MotionProjectCard
-            custom={500}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={200}
             variants={cardVariants}
             title="Shukkin"
-            description="A simple, no fluff shift management application for small businesses."
+            description={
+              <>
+                A simple, no fluff shift management application for small
+                businesses. After experiencing how difficult it was to organise
+                rosters when I was in managerial positions I sought to create an
+                easy to use solution.
+                <br />
+                My aim was to create a website that is easy to use for not only
+                the company making the shift schedule, but also for the
+                employees who will be using it.
+              </>
+            }
             image={ShukkinMockup}
             stack={[
               <SiTypescript className="h-7 w-7" key={"icon7"} />,
@@ -110,10 +126,19 @@ const DesignNew = () => {
 
           {/* Maison Di */}
           <MotionProjectCard
-            custom={-500}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={-200}
             variants={cardVariants}
             title="Maison Di Giorgio"
-            description="My design agency"
+            description={
+              <>
+                My design agency. The focus was on using animation to increase
+                our potential client&apos;s intrigue and interest in our
+                agency/website.
+              </>
+            }
             image={MaisonMockup}
             stack={[
               <SiTypescript className="h-7 w-7" key={"icon13"} />,
@@ -121,7 +146,29 @@ const DesignNew = () => {
               <SiTailwindcss className="h-7 w-7" key={"icon15"} />,
             ]}
           />
-        </motion.div>
+          <MotionProjectCard
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={200}
+            variants={cardVariants}
+            title="Image Enhancer"
+            direction="right"
+            description={
+              <>
+                A Python based API which uses machine learning to enhance the
+                quality of images. It uses a GAN to generate a new image and can
+                be easily hosted using a Docker container.
+              </>
+            }
+            image={EnhanceMockup}
+            stack={[
+              <SiPython className="h-7 w-7" key={"icon16"} />,
+              <SiFastapi className="h-7 w-7" key={"icon17"} />,
+              <SiDocker className="h-7 w-7" key={"icon18"} />,
+            ]}
+          />
+        </div>
         <div className=" hidden h-full self-end md:flex md:w-24">
           <h1 className="flex font-inter  text-8xl font-semibold uppercase text-harvest-gold md:w-24">
             <span className="origin-top-left md:-translate-y-[633px] md:translate-x-24 md:rotate-90">

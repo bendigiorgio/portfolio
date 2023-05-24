@@ -52,10 +52,7 @@ html {
     "Segoe UI Symbol",
     "Noto Color Emoji"
   ); /* 4 */
-  font-feature-settings: theme(
-    "fontFamily.sans[1].fontFeatureSettings",
-    normal
-  ); /* 5 */
+  font-feature-settings: theme("fontFamily.sans", normal); /* 5 */
 }
 
 /*
@@ -194,6 +191,7 @@ input,
 optgroup,
 select,
 textarea {
+  background-color: inherit;
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   font-weight: inherit; /* 1 */

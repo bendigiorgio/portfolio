@@ -9,6 +9,7 @@ module.exports = {
   darkMode: ["class"],
   theme: {
     extend: {
+      mask: ["content"],
       fontFamily: {
         inter: ["var(--font-inter)", ...fontFamily.sans],
       },

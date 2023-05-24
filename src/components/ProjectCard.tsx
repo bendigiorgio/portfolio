@@ -5,7 +5,7 @@ import { ReactNode, forwardRef } from "react";
 type ProjectCardProps = {
   title: string;
   image: StaticImageData;
-  description: string;
+  description: ReactNode;
   stack: ReactNode[];
   direction?: "left" | "right";
 };
@@ -37,7 +37,7 @@ const ProjectCard = forwardRef<Ref, ProjectCardProps>(
             </div>
             <div>
               <h3 className="text-5xl font-medium uppercase">{title}</h3>
-              <p className="text-soft-peach-50/8 mt-2 max-w-md">
+              <p className="mt-2 max-w-md text-soft-peach-50/80">
                 {description}
               </p>
             </div>
