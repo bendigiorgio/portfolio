@@ -22,7 +22,8 @@ import {
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { RiLayoutGridFill } from "react-icons/ri";
 import { BsArrowsMove, BsCodeSlash } from "react-icons/bs";
-
+import { CiTimer } from "react-icons/ci";
+import { TbRosetteNumber1 } from "react-icons/tb";
 import MotionStepperCard from "./StepperCard";
 import Image from "next/image";
 
@@ -166,7 +167,7 @@ const Expertise = () => {
 
       <motion.div className="flex w-full flex-col  ">
         <div className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
-          <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute inset-0 -z-10 overflow-hidden opacity-30">
             <svg
               className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-600/50 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
               aria-hidden="true"
@@ -292,7 +293,7 @@ const Expertise = () => {
                 <div className="max-w-xl text-base leading-7 text-gray-200 lg:max-w-lg">
                   <ul role="list" className="mt-8 space-y-8 text-gray-200">
                     <li className="flex gap-x-3">
-                      <CloudArrowUpIcon
+                      <CiTimer
                         className="mt-1 h-5 w-5 flex-none text-harvest-gold"
                         aria-hidden="true"
                       />
@@ -307,7 +308,7 @@ const Expertise = () => {
                       </span>
                     </li>
                     <li className="flex gap-x-3">
-                      <LockClosedIcon
+                      <TbRosetteNumber1
                         className="mt-1 h-5 w-5 flex-none text-harvest-gold"
                         aria-hidden="true"
                       />
