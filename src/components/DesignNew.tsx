@@ -44,6 +44,7 @@ const DesignNew = () => {
 
   return (
     <motion.section
+      id="design"
       ref={sectionRef}
       onViewportEnter={() => toggleNav(true)}
       className="relative min-h-screen w-full overflow-hidden py-36"
@@ -171,7 +172,10 @@ const DesignNew = () => {
         </div>
         <div className=" hidden h-full self-end md:flex md:w-24">
           <h1 className="flex font-inter  text-8xl font-semibold uppercase text-harvest-gold md:w-24">
-            <span className="origin-top-left md:-translate-y-[633px] md:translate-x-24 md:rotate-90">
+            <span
+              id="development"
+              className="origin-top-left md:-translate-y-[633px] md:translate-x-24 md:rotate-90"
+            >
               Development
             </span>
           </h1>

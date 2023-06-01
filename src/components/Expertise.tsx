@@ -3,11 +3,10 @@ import {
   CloudArrowUpIcon,
   LockClosedIcon,
   MagnifyingGlassCircleIcon,
-  ServerIcon,
 } from "@heroicons/react/24/outline";
 import { Stepper } from "@mantine/core";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { MdCheckCircle, MdOutlineDesignServices } from "react-icons/md";
 import { GiLightBulb, GiVideoConference } from "react-icons/gi";
@@ -31,7 +30,10 @@ const Expertise = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="flex min-h-screen w-full flex-col items-center space-y-2">
+    <section
+      id="process"
+      className="flex min-h-screen w-full flex-col items-center space-y-2"
+    >
       <motion.div className="relative flex w-full flex-col border-b  p-3 py-8">
         <h3 className="mt-2 text-3xl font-bold uppercase tracking-tight text-gray-200 sm:text-4xl">
           My Process

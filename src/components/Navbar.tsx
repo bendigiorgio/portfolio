@@ -23,7 +23,7 @@ const Navbar = () => {
             <div>
               {navToggle.logoActive && (
                 <a
-                  href="/"
+                  href="/#landing"
                   className="flex w-fit flex-row items-center text-white hover:cursor-pointer"
                 >
                   <Logo className="h-12 w-12 text-white" />
@@ -39,20 +39,20 @@ const Navbar = () => {
                 !navToggle.logoActive && "hidden md:grid"
               }`}
             >
-              <a className="" href="">
+              <a className="" href="#design">
                 DESIGN
               </a>
               <a className="text-left" href="">
                 bendigiorgio@gmail.com
               </a>
-              <a className="" href="">
+              <a className="" href="#development">
                 DEVELOPMENT
               </a>
               <a className="text-left" href="">
                 +81 80 9434 7288
               </a>
-              <a className="" href="">
-                ARTWORK
+              <a className="" href="#process">
+                PROCESS
               </a>
               <a className="col-start-1" href="">
                 CONTACT

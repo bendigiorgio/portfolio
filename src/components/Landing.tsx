@@ -3,11 +3,16 @@ import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import { useNavbarStore } from "@/stores/navbarStore";
-
+import { HiOutlineDocumentText } from "react-icons/hi";
 const Landing = () => {
   const toggleLogo = useNavbarStore((state) => state.toggleLogo);
   return (
-    <section className="relative flex min-h-screen flex-col-reverse">
+    <motion.section
+      id="landing"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="relative flex min-h-screen flex-col-reverse"
+    >
       <div>
         <h1
           className={`mb-14 font-inter text-5xl font-semibold 2xs:text-6xl sm:text-7xl lg:text-9xl`}
@@ -29,16 +34,26 @@ const Landing = () => {
             Working on new and ambitious projects. I push the boundaries and
             create truly interactive and immersive experiences.
           </p>
-          <button className="bg-primary flex w-fit flex-row items-center space-x-3 rounded-3xl px-5 py-1 font-medium text-secondary">
-            <span className="whitespace-nowrap">Let's chat</span>
-            <ChatBubbleLeftRightIcon className="h-7  w-7" />
-          </button>
+          <div className="flex flex-row space-x-4">
+            <button className="flex w-fit flex-row items-center space-x-3 rounded-3xl bg-soft-peach-50 px-5 py-1 font-medium text-secondary hover:bg-soft-peach-50/70">
+              <span className="whitespace-nowrap">Let&apos;s chat</span>
+              <ChatBubbleLeftRightIcon className="h-7  w-7" />
+            </button>
+            <a
+              href="/Benjamin_DiGiorgio_Resume.pdf"
+              download
+              className="flex w-fit flex-row items-center space-x-3 rounded-3xl bg-soft-peach-50 px-5 py-1 font-medium text-secondary hover:bg-soft-peach-50/70"
+            >
+              <span className="whitespace-nowrap">Resume</span>
+              <HiOutlineDocumentText className="h-7  w-7" />
+            </a>
+          </div>
         </motion.div>
         <div className="relative flex h-full basis-1/2 items-center justify-center pt-10">
           <Logo className="h-96 md:h-[450px] lg:h-[600px] " />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
