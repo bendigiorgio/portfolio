@@ -35,10 +35,13 @@ const Landing = () => {
             create truly interactive and immersive experiences.
           </p>
           <div className="flex flex-row space-x-4">
-            <button className="flex w-fit flex-row items-center space-x-3 rounded-3xl bg-soft-peach-50 px-5 py-1 font-medium text-secondary hover:bg-soft-peach-50/70">
+            <a
+              href="mailto:bendigiorgio@gmail.com"
+              className="flex w-fit flex-row items-center space-x-3 rounded-3xl bg-soft-peach-50 px-5 py-1 font-medium text-secondary hover:bg-soft-peach-50/70"
+            >
               <span className="whitespace-nowrap">Let&apos;s chat</span>
               <ChatBubbleLeftRightIcon className="h-7  w-7" />
-            </button>
+            </a>
             <a
               href="/Benjamin_DiGiorgio_Resume.pdf"
               download
