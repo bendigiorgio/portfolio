@@ -223,8 +223,8 @@ const Expertise = () => {
                 width={500}
                 height={500}
                 className=" max-w-none rounded-xl bg-gray-900 object-cover shadow-xl ring-1 ring-gray-400/10 "
-                src="/art/1.png"
-                alt=""
+                src="/backend.png"
+                alt="backend"
               />
             </div>
             <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
