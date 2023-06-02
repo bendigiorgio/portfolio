@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} `}>
       <body
-        className={`${roboto.className} bg-secondary px-1 py-3 text-soft-peach-50 2xs:px-4`}
+        className={`${roboto.className} bg-secondary px-1 py-3 text-soft-peach-50`}
       >
         <Navbar />
         {children}

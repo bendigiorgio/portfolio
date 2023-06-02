@@ -27,9 +27,7 @@ const DesignNew = () => {
   const toggleNav = useNavbarStore((state) => state.toggleNavbar);
 
   const cardVariants = {
-    //esling-disable-next-line
-    //@ts-ignore  //! Use only numbers
-    hidden: (i) => ({
+    hidden: (i: number) => ({
       opacity: 0,
       x: i,
     }),
@@ -49,15 +47,15 @@ const DesignNew = () => {
       onViewportEnter={() => toggleNav(true)}
       className="relative min-h-screen w-full overflow-hidden py-36"
     >
-      <div className="m-auto flex w-fit flex-col items-center space-x-3 md:flex-row">
+      <div className="m-auto flex w-fit flex-col items-center md:flex-row md:space-x-3">
         <div className="flex h-full flex-col space-y-3 self-start md:w-24">
-          <h1 className="flex flex-row font-inter text-6xl font-semibold uppercase text-harvest-gold md:w-24 md:text-8xl">
+          <h1 className="flex flex-row font-inter text-4xl font-semibold uppercase text-harvest-gold sm:text-6xl md:w-24 md:text-8xl">
             <span className="origin-bottom-left md:-translate-y-24 md:rotate-90">
               Design
             </span>
             <span className="mx-3 flex md:hidden">/</span>
           </h1>
-          <h1 className="flex flex-row pb-7 font-inter text-6xl font-semibold uppercase text-harvest-gold md:hidden">
+          <h1 className="flex flex-row pb-7 font-inter text-4xl font-semibold uppercase text-harvest-gold sm:text-6xl md:hidden">
             <span className="flex md:hidden">Development</span>
           </h1>
         </div>

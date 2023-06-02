@@ -7,7 +7,7 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <main className="text-primary flex max-w-full flex-col bg-secondary">
+    <main className="text-primary flex w-screen max-w-full flex-col overflow-hidden bg-secondary">
       <Landing />
       <DesignNew />
       <Expertise />

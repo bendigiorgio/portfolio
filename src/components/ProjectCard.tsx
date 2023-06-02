@@ -15,7 +15,7 @@ const ProjectCard = forwardRef<Ref, ProjectCardProps>(
     return (
       <div
         ref={ref}
-        className="z-30 flex w-full flex-col rounded-md bg-neutral-900/40 p-8 filter backdrop-blur-3xl"
+        className="z-30 flex w-full flex-col rounded-md bg-neutral-900/40 p-2 filter backdrop-blur-3xl sm:p-8"
       >
         <div
           className={`flex ${
@@ -23,16 +23,17 @@ const ProjectCard = forwardRef<Ref, ProjectCardProps>(
           } space-y-6 xl:flex-row xl:space-x-8 xl:space-y-0`}
         >
           {direction === "right" && (
-            <Image
-              className="rounded-md"
-              height={400}
-              width={400}
-              alt="Blackbox tattoo mockup"
-              src={image}
-            />
+            <div className="relative flex h-[260px] w-[260px]  self-center xs:h-[300px] xs:w-[300px] sm:h-[350px] sm:w-[350px] lg:h-[400px] lg:w-[400px]">
+              <Image
+                className="rounded-md object-cover"
+                fill
+                alt="Blackbox tattoo mockup"
+                src={image}
+              />
+            </div>
           )}
           <div className="flex flex-col space-y-6">
-            <div className="flex flex-row space-x-4 ">
+            <div className="flex flex-row flex-wrap space-x-4 ">
               {stack.map((icon) => icon)}
             </div>
             <div>
@@ -45,13 +46,14 @@ const ProjectCard = forwardRef<Ref, ProjectCardProps>(
             <div className="h-full w-full"></div>
           </div>
           {direction !== "right" && (
-            <Image
-              className="rounded-md"
-              height={400}
-              width={400}
-              alt="Blackbox tattoo mockup"
-              src={image}
-            />
+            <div className="relative flex h-[260px] w-[260px] self-center xs:h-[300px]  xs:w-[300px] sm:h-[350px] sm:w-[350px] lg:h-[400px] lg:w-[400px]">
+              <Image
+                className="rounded-md object-cover"
+                fill
+                alt="Blackbox tattoo mockup"
+                src={image}
+              />
+            </div>
           )}
         </div>
       </div>

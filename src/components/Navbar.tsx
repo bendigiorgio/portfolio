@@ -35,7 +35,7 @@ const Navbar = () => {
               )}
             </div>
             <div
-              className={`mr-3 grid grid-cols-2 grid-rows-4 gap-x-14 gap-y-1 text-right font-sans text-sm text-white ${
+              className={`mr-3 grid grid-cols-2 grid-rows-4 gap-x-6 gap-y-1 text-right font-sans text-sm text-white sm:gap-x-14 ${
                 !navToggle.logoActive && "hidden md:grid"
               }`}
             >
@@ -48,7 +48,10 @@ const Navbar = () => {
               <a className="" href="#development">
                 DEVELOPMENT
               </a>
-              <a className="text-left" href="">
+              <a
+                className="whitespace-nowrap text-left"
+                href="tel:+818094347288"
+              >
                 +81 80 9434 7288
               </a>
               <a className="" href="#process">
