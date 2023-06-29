@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { Inter, Roboto } from "next/font/google";
+import { Providers } from "@/components/Providers";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -24,10 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} `}>
       <body
-        className={`${roboto.className} bg-secondary px-1 py-3 text-soft-peach-50`}
+        className={`${roboto.className} bg-background px-1 py-3 text-soft-peach-50`}
       >
-        <Navbar />
-        {children}
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );

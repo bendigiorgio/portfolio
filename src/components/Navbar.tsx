@@ -57,9 +57,6 @@ const Navbar = () => {
               <a className="" href="#process">
                 PROCESS
               </a>
-              <a className="col-start-1" href="">
-                CONTACT
-              </a>
             </div>
           </motion.nav>
         )}

@@ -11,7 +11,7 @@ const Landing = () => {
       id="landing"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative flex min-h-screen flex-col-reverse"
+      className="relative flex min-h-screen flex-col-reverse px-4 pt-3"
     >
       <div>
         <h1
@@ -37,7 +37,7 @@ const Landing = () => {
           <div className="flex flex-row space-x-4">
             <a
               href="mailto:bendigiorgio@gmail.com"
-              className="flex w-fit flex-row items-center space-x-3 rounded-3xl bg-soft-peach-50 px-5 py-1 font-medium text-secondary hover:bg-soft-peach-50/70"
+              className="flex w-fit flex-row items-center space-x-3 rounded-3xl bg-soft-peach-50 px-5 py-1 font-medium text-background hover:bg-soft-peach-50/70"
             >
               <span className="whitespace-nowrap">Let&apos;s chat</span>
               <ChatBubbleLeftRightIcon className="h-7  w-7" />
@@ -45,7 +45,7 @@ const Landing = () => {
             <a
               href="/Benjamin_DiGiorgio_Resume.pdf"
               download
-              className="flex w-fit flex-row items-center space-x-3 rounded-3xl bg-soft-peach-50 px-5 py-1 font-medium text-secondary hover:bg-soft-peach-50/70"
+              className="flex w-fit flex-row items-center space-x-3 rounded-3xl bg-soft-peach-50 px-5 py-1 font-medium text-background hover:bg-soft-peach-50/70"
             >
               <span className="whitespace-nowrap">Resume</span>
               <HiOutlineDocumentText className="h-7  w-7" />
